@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { HexString } from '@polkadot/util/types';
-import type { EcdsaSignature, Ed25519Signature, ExtrinsicEra, ExtrinsicSignature, Sr25519Signature } from '../../interfaces/extrinsics/index.js';
+import type { EcdsaSignature, Ed25519Signature, ExtrinsicEra, ExtrinsicSignature, Sr25519Signature, Dilithium2Signature } from '../../interfaces/extrinsics/index.js';
 import type { Address, Call } from '../../interfaces/runtime/index.js';
 import type { ExtrinsicPayloadValue, ICompact, IExtrinsicSignature, IKeyringPair, INumber, Registry, SignatureOptions } from '../../types/index.js';
 import type { ExtrinsicSignatureOptions } from '../types.js';
@@ -92,7 +92,7 @@ export class GenericExtrinsicSignatureV4 extends Struct implements IExtrinsicSig
   /**
    * @description The actual [[EcdsaSignature]], [[Ed25519Signature]] or [[Sr25519Signature]]
    */
-  public get signature (): EcdsaSignature | Ed25519Signature | Sr25519Signature {
+  public get signature (): EcdsaSignature | Ed25519Signature | Sr25519Signature | Dilithium2Signature {
     // the second case here is when we don't have an enum signature, treat as raw
     return (this.multiSignature.value || this.multiSignature) as Sr25519Signature;
   }

@@ -8,6 +8,9 @@ import type { H512 } from '@polkadot/types/interfaces/runtime';
 /** @name AnySignature */
 export interface AnySignature extends H512 {}
 
+/** @name Dilithium2Signature */
+export interface Dilithium2Signature extends U8aFixed {}
+
 /** @name EcdsaSignature */
 export interface EcdsaSignature extends U8aFixed {}
 
@@ -58,7 +61,9 @@ export interface MultiSignature extends Enum {
   readonly asSr25519: Sr25519Signature;
   readonly isEcdsa: boolean;
   readonly asEcdsa: EcdsaSignature;
-  readonly type: 'Ed25519' | 'Sr25519' | 'Ecdsa';
+  readonly isDilithium2: boolean;
+  readonly asDilithium2: Dilithium2Signature;
+  readonly type: 'Ed25519' | 'Sr25519' | 'Ecdsa' | 'Dilithium2';
 }
 
 /** @name Signature */

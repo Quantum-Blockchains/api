@@ -3,7 +3,7 @@
 
 import type { AnyJson, AnyTuple, AnyU8a, ArgsDef, IMethod, Inspect } from '@polkadot/types-codec/types';
 import type { HexString } from '@polkadot/util/types';
-import type { EcdsaSignature, Ed25519Signature, ExtrinsicUnknown, ExtrinsicV4, Sr25519Signature } from '../interfaces/extrinsics/index.js';
+import type { EcdsaSignature, Ed25519Signature, ExtrinsicUnknown, ExtrinsicV4, Sr25519Signature, Dilithium2Signature } from '../interfaces/extrinsics/index.js';
 import type { FunctionMetadataLatest } from '../interfaces/metadata/index.js';
 import type { Address, Call, CodecHash } from '../interfaces/runtime/index.js';
 import type { CallBase, ExtrinsicPayloadValue, ICompact, IExtrinsic, IKeyringPair, INumber, Registry, SignatureOptions } from '../types/index.js';
@@ -173,7 +173,7 @@ abstract class ExtrinsicBase<A extends AnyTuple> extends AbstractBase<ExtrinsicV
   /**
    * @description The actual [[EcdsaSignature]], [[Ed25519Signature]] or [[Sr25519Signature]]
    */
-  public get signature (): EcdsaSignature | Ed25519Signature | Sr25519Signature {
+  public get signature (): EcdsaSignature | Ed25519Signature | Sr25519Signature | Dilithium2Signature {
     return this.inner.signature.signature;
   }
 

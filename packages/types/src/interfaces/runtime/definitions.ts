@@ -140,7 +140,8 @@ export default {
       _enum: {
         Ed25519: '[u8; 32]',
         Sr25519: '[u8; 32]',
-        Ecdsa: '[u8; 33]'
+        Ecdsa: '[u8; 33]',
+        Dilithium2: '[u8; 1312]',
       }
     },
     Moment: 'UInt<64, Moment>',

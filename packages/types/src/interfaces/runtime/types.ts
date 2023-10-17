@@ -231,7 +231,9 @@ export interface MultiSigner extends Enum {
   readonly asSr25519: U8aFixed;
   readonly isEcdsa: boolean;
   readonly asEcdsa: U8aFixed;
-  readonly type: 'Ed25519' | 'Sr25519' | 'Ecdsa';
+  readonly isDilithium2: boolean;
+  readonly asDilithium2: U8aFixed;
+  readonly type: 'Ed25519' | 'Sr25519' | 'Ecdsa' | 'Dilithium2';
 }
 
 /** @name OpaqueCall */

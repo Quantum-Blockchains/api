@@ -710,8 +710,8 @@ export class PortableRegistry extends Struct implements ILookup {
   #extractArray (_: number, { len, type }: SiTypeDefArray): TypeDef {
     const length = len.toNumber();
 
-    if (length > 2048) {
-      throw new Error('Only support for [Type; <length>], where length <= 2048');
+    if (length > 2420) {
+      throw new Error('Only support for [Type; <length>], where length <= 2420');
     }
 
     return withTypeString(this.registry, {

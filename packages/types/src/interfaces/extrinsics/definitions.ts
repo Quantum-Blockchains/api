@@ -30,13 +30,15 @@ export default {
       _enum: {
         Ed25519: 'Ed25519Signature',
         Sr25519: 'Sr25519Signature',
-        Ecdsa: 'EcdsaSignature'
+        Ecdsa: 'EcdsaSignature',
+        Dilithium2: 'Dilithium2Signature'
       }
     },
     Signature: 'H512',
     SignerPayload: 'GenericSignerPayload',
     EcdsaSignature: '[u8; 65]',
     Ed25519Signature: 'H512',
-    Sr25519Signature: 'H512'
+    Sr25519Signature: 'H512',
+    Dilithium2Signature: '[u8; 2420]'
   }
 } as Definitions;
